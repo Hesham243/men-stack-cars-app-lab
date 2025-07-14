@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Create a car</title>
+  </head>
+  <body>
+    <h1>Create a New car!</h1>
+    <a href="/cars/">Back to Cars</a>
+    
+    <form action="/cars" method="POST">
+
+      <label for="name">Care Name:</label>
+      <input type="text" name="name" id="name" required>
+      
+      <label for="price">Price:</label>
+      <input type="text" name="price" id="price" required>
+      
+      <label for="owners">Number of Owners:</label>
+      <input type="text" name="owners" id="owners" required>
+      
+      <label for="manufacturer">Manufacturer:</label>
+      <input type="text" name="manufacturer" id="manufacturer" required>
+      
+      <label for="description">Description:</label>
+      <textarea name="description" id="description"></textarea>
+      
+      <label for="model">Model:</label>
+      <input type="text" name="model" id="model" required>
+      
+      <div class="chexkbox-div">
+        <label for="isAccidented">Is it accidented befor?</label>
+        <input type="checkbox" name="isAccidented" id="isAccidented" required>
+      </div>
+
+      <button type="submit">Add Car</button>
+
+    </form>
+  </body>
+</html>
