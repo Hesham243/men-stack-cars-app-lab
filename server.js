@@ -2,13 +2,18 @@ const dotenv = require('dotenv')
 dotenv.config()
 const express = require('express')
 const app = express()
-const path = require("path");
+const path = require("path")
 const mongoose = require('mongoose')
+const methodOverride = require('method-override')
+const morgan = require('morgan')
 
 
 // MIDDLEWARE
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride("_method"))
+app.use(morgan('dev'))
+
 
 
 // Controllers
@@ -24,7 +29,7 @@ app.use('/cars', carsController)
 // Database connection
 mongoose.connect(process.env.MONGODB_URI);
 mongoose.connection.on("connected", () => {
-  console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
+  console.log(`Connected to MongoDB ${mongoose.connection.name}.`)
 });
 
 

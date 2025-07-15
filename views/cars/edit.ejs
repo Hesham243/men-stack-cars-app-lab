@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Create a car</title>
+  </head>
+  <body>
+    <h1>Create a New car!</h1>
+    <a href="/cars/">Back to Cars</a>
+    
+    <form action="/cars/<%= foundCar._id %>?_method=PUT" method="POST">
+
+      <label for="name">Care Name:</label>
+      <input type="text" name="name" id="name" value="<%= foundCar.name %>">
+      
+      <label for="price">Price:</label>
+      <input type="text" name="price" id="price" value="<%= foundCar.price %>">
+      
+      <label for="owners">Number of Owners:</label>
+      <input type="text" name="owners" id="owners" value="<%= foundCar.owners %>">
+      
+      <label for="manufacturer">Manufacturer:</label>
+      <input type="text" name="manufacturer" id="manufacturer" value="<%= foundCar.manufacturer %>">
+      
+      <label for="description">Description:</label>
+      <textarea name="description" id="description"><%= foundCar.description %></textarea>
+      
+      <label for="model">Model:</label>
+      <input type="text" name="model" id="model" value="<%= foundCar.model %>">
+
+      <label for="year">Year:</label>
+      <input type="text" name="year" id="year" value="<%= foundCar.year %>">      
+
+      <div class="chexkbox-div">
+        <label for="isAccidented">Is it accidented befor?</label>
+        <input type="checkbox" name="isAccidented" id="isAccidented" <%= foundCar.isAccidented ? "checked" : "" %>>
+      </div>
+
+      <button type="submit">Edit Car</button>
+
+    </form>
+  </body>
+</html>
