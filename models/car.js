@@ -8,6 +8,7 @@ const carSchema = new mongoos.Schema(
     manufacturer: String,
     description: String,
     model: String,
+    year: String,
     isAccidented: Boolean
   }
 )
