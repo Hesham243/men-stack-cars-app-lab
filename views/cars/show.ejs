@@ -15,6 +15,7 @@
 		<p><strong>Model:</strong><%= foundCar.model %></p>
 		<p><strong>Manufacturer:</strong><%= foundCar.manufacturer %></p>
 		<p><strong>Number of owners:</strong> <%= foundCar.owners %></p>
+    <p><strong>Is Accidanted Before:</strong> <%= foundCar.isAccidented ? "Yes" : "No" %></p>
 
 		<% if (foundCar.description) { %>  
       <p><strong>Description:</strong><%= foundCar.description %></p>
