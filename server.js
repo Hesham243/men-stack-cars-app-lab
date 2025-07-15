@@ -6,6 +6,7 @@ const path = require("path")
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
 const morgan = require('morgan')
+const carsController = require('./controllers/carsController')
 
 
 // MIDDLEWARE
@@ -15,13 +16,10 @@ app.use(methodOverride("_method"))
 app.use(morgan('dev'))
 
 
-
-// Controllers
-const carsController = require('./controllers/carsController')
-
 app.get ('/', (req, res) => {
   res.render('index.ejs')
 })
+
 
 app.use('/cars', carsController)
 

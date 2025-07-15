@@ -5,7 +5,6 @@ const Car = require('../models/car.js')
 
 router.get('/', async (req, res) => {
   const allCars = await Car.find()
-  console.log('All cars:', allCars) // Testing
   res.render('cars/index.ejs', { allCars: allCars})
 })
 
@@ -19,7 +18,6 @@ router.post('/', async (req, res) => {
   req.body.isAccidented === 'on' ? req.body.isAccidented = true : req.body.isAccidented = false
 
   const addedCar = await Car.create(req.body)
-  console.log('Added car:', addedCar) // Testing
   res.redirect('/')
 })
 
